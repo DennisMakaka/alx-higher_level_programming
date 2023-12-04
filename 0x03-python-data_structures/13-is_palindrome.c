@@ -9,7 +9,7 @@
  */
 listint_t *add_nodeint(listint_t **head, const int n)
 {
-	listint_t *new_node = malloc(sizeof(listint_t)); /* Alloc mem for new node */
+	listint_t *new_node = malloc(sizeof(listint_t)); /* Allocate memory for new node */
 
 	if (!new_node) /* Check if malloc failed */
 		return (NULL);
@@ -36,14 +36,14 @@ int is_palindrome(listint_t **head)
 
 	while (head2 != NULL)
 	{
-		add_nodeint(&reversed_list, head2->n); /* Create a revers copy of the list */
+		add_nodeint(&reversed_list, head2->n); /* Create a reversed copy of the list */
 		head2 = head2->next;
 	}
 
 	temp = reversed_list;
 	while (*head != NULL)
 	{
-		if ((*head)->n != temp->n)
+		if ((*head)->n != temp->n) /* Compare each element of the original list with the reversed copy */
 		{
 			free_listint(reversed_list); /* Free memory allocated for reversed copy */
 			return (0); /* Not a palindrome */
