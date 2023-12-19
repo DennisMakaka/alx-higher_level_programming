@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-""" A module for square""
 
 class Square:
     """Square class definition.
@@ -12,4 +11,10 @@ class Square:
     Methods:
         No methods currently defined
             """
-    pass
+    def __init__(self, size):
+        """Initialization method.
+
+        Args:
+            size (int): The size of the square.
+        """
+        self.__size = size
