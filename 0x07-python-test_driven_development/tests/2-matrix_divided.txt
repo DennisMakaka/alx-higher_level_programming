@@ -1,0 +1,64 @@
+# Tests cases for matrix_divided function
+
+# Import the module
+>>> from 2-matrix_divided import matrix_divided
+
+# Test Case 1: Valid division with a positive number
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 3)
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+[[1, 2, 3], [4, 5, 6]]
+
+# Test Case 2: Valid division with a negative number
+>>> matrix = [
+...     [10, 20, 30],
+...     [40, 50, 60],
+...     [70, 80, 90]
+... ]
+>>> matrix_divided(matrix, -5)
+[[-2.0, -4.0, -6.0], [-8.0, -10.0, -12.0], [-14.0, -16.0, -18.0]]
+[[10, 20, 30], [40, 50, 60], [70, 80, 90]]
+
+# Test Case 3: Division by zero (should raise ZeroDivisionError)
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+# Test Case 4: Non-numeric element in the matrix (should raise TypeError)
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 'five', 6]
+... ]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# Test Case 5: Rows of different sizes (should raise TypeError)
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5],
+...     [6, 7, 8]
+... ]
+>>> matrix_divided(matrix, 2)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+# Test Case 6: Non-numeric div (should raise TypeError)
+>>> matrix = [
+...     [1, 2, 3],
+...     [4, 5, 6]
+... ]
+>>> matrix_divided(matrix, 'two')
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
